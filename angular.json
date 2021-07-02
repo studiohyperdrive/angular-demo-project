@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-testing-workshop": {
+    "shd-angular-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-testing-workshop",
+            "outputPath": "dist/shd-angular-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-testing-workshop:build:production"
+              "browserTarget": "shd-angular-demo:build:production"
             },
             "development": {
-              "browserTarget": "angular-testing-workshop:build:development"
+              "browserTarget": "shd-angular-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-testing-workshop:build"
+            "browserTarget": "shd-angular-demo:build"
           }
         },
         "test": {
@@ -109,5 +109,5 @@
       }
     }
   },
-  "defaultProject": "angular-testing-workshop"
+  "defaultProject": "shd-angular-demo"
 }
