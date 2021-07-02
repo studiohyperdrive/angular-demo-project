@@ -10,11 +10,17 @@ import { Observable } from 'rxjs';
 export class LaunchOverviewPage {
   public launches$: Observable<ILaunch[]>;
 
+  private launchesOffset = 0;
+
   constructor(
     private launchFacade: LaunchFacade
   ) {
-    this.launchFacade.getLaunches();
-
+    this.getLaunches();
     this.launches$ = this.launchFacade.selectLaunches();
+  }
+
+  public getLaunches(): void {
+    this.launchFacade.getLaunches(this.launchesOffset);
+    this.launchesOffset = this.launchesOffset + 10;
   }
 }

@@ -35,4 +35,13 @@ describe('LaunchOverviewPage', () => {
       expect(facade.getLaunches).toHaveBeenCalled();
     });
   });
+
+  describe('getLaunches', () => {
+    it('should fetch launches through the facade and increase the offset', () => {
+      component.getLaunches();
+
+      expect(facade.getLaunches).toHaveBeenCalledWith(10);
+      expect(component['launchesOffset']).toBe(20);
+    });
+  });
 });
