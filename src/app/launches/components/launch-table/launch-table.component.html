@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Rocket name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let launch of launches">
+    <td>{{ launch.name }}</td>
+    <td>{{ launch.status?.name }}</td>
+    <td>{{ launch.window_start | date:'long' }}</td>
+    <td>{{ launch.window_end | date:'long' }}</td>
+    <td>{{ launch.rocket?.configuration?.full_name }}</td>
+  </tr>
+  </tbody>
+</table>
