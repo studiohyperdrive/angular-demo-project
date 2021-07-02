@@ -8,13 +8,13 @@ const reducer = createReducer(
   initialState,
   on(
     getLaunches,
-    (state) => ({ ...state, isLoading: true })
+    (state) => ({ ...state, loading: true })
   ),
   on(
     getLaunchesSucces,
     (state, { results }) => adapter.upsertMany(results, {
       ...state,
-      isLoading: false,
+      loading: false,
       error: null,
     })
   ),
@@ -22,7 +22,7 @@ const reducer = createReducer(
     getLaunchesFailed,
     (state, { error }) => ({
       ...state,
-      isLoading: false,
+      loading: false,
       error,
     })
   ),

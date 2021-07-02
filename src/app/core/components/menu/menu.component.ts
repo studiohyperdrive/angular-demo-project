@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { IMenuItem } from './menu.types';
 
 @Component({
   templateUrl: './menu.component.html',
   selector: 'app-menu',
 })
-export class MenuComponent {}
+export class MenuComponent {
+  @Input() public menuItems: IMenuItem[] = [];
+}

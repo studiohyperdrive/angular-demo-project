@@ -17,7 +17,7 @@ export class LaunchEffects {
     private launch: LaunchService
   ) { }
 
-  public launches$ =
+  public getLaunches$ =
     createEffect(() => this.actions$.pipe(
       ofType(LaunchActions.getLaunches),
       switchMap(({ offset }) => {

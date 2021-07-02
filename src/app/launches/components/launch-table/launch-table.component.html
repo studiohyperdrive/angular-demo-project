@@ -9,7 +9,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let launch of launches">
+  <tr *ngFor="let launch of launches" class="table__content-row">
     <td>{{ launch.name }}</td>
     <td>{{ launch.status?.name }}</td>
     <td>{{ launch.window_start | date:'long' }}</td>
