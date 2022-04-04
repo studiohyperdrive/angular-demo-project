@@ -1,13 +1,13 @@
-# The name of my project
+# SHD Angular Demo 
 
 ## General
 
 This repo contains ...
 
 It is build with:
-- node: `v14.17.1` ( ~ `lts/fermium`)
-- npm: `v6.14.13`
-- angular: `v12.1.0`
+- node: `v16.14.2` ( ~ `lts/gallium`)
+- npm: `v8.5.0`
+- angular: `v13.3.0`
 
 For a complete list of packages and version check out the `package.json` file.
 
