@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
 
 import { MenuComponent } from './menu.component';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 describe('MenuComponent', () => {
   let fixture: ComponentFixture<MenuComponent>;
@@ -16,7 +17,12 @@ describe('MenuComponent', () => {
       declarations: [
         MenuComponent,
       ],
-    }).compileComponents();
+    })
+      // INFO: This is needed to avoid change detection issues while testing
+      .overrideComponent(MenuComponent, {
+        set: { changeDetection: ChangeDetectionStrategy.Default }
+      })
+      .compileComponents();
 
     fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;
