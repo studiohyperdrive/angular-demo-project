@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 
 import { LaunchTableComponent } from './launch-table.component';
 import { LaunchesMock } from '../../../repositories/services/launch/launch.service.mock';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 describe('LaunchTableComponent', () => {
   let fixture: ComponentFixture<LaunchTableComponent>;
@@ -17,7 +18,12 @@ describe('LaunchTableComponent', () => {
       declarations: [
         LaunchTableComponent,
       ],
-    }).compileComponents();
+    })
+      // INFO: This is needed to avoid change detection issues while testing
+      .overrideComponent(LaunchTableComponent, {
+        set: { changeDetection: ChangeDetectionStrategy.Default }
+      })
+      .compileComponents();
 
     fixture = TestBed.createComponent(LaunchTableComponent);
     component = fixture.componentInstance;
