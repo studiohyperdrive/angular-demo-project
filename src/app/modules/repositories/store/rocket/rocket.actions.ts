@@ -9,16 +9,13 @@ export const getRocket = createAction(
   props<{ id: number }>()
 );
 
-export const clearRocket = createAction(
-	RocketActions.clearRocket
-);
+// TODO: clearRocket should clear the store
+// export const clearRocket = createAction()
 
 export const getRocketSuccess = createAction(
 	RocketActions.getRocketSuccess,
 	props<{ rocket: IRocket }>()
 );
 
-export const getRocketFailed = createAction(
-	RocketActions.getRocketFailed,
-	props<{ error: Error }>()
-);
+// TODO: getRocketFailed should store a potential error
+// export const getRocketFailed = createAction()

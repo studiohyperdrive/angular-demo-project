@@ -1,25 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-
-import { RocketFacade } from '../../facades/rocket/rocket.facade';
-import { IRocket } from '../../../../modules/repositories/services/rocket/rocket.types';
+import { Component } from '@angular/core';
 
 @Component({
   templateUrl: './rocket-detail.page.html',
 })
-export class RocketDetailPage implements OnInit {
-  public rocket$: Observable<IRocket>;
-
-  constructor(
-    private readonly rocketFacade: RocketFacade,
-    private readonly route: ActivatedRoute
-  ) {}
-
-  public ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-
-    this.rocketFacade.getRocket(parseInt(id));
-    this.rocket$ = this.rocketFacade.selectRocket();
-  }
+export class RocketDetailPage {
+  /**
+   * TODO: Our RocketDetailPage should:
+   *  1. have a rocket$ observable that will contain our rocket
+   *  2. get the rocket through our RocketFacade
+   *  3. select the rocket from the store through the RocketFacade
+   *
+   *  HINT: You will need this to select the id:
+   *  constructor(
+   *     private readonly route: ActivatedRoute
+   *   ) {}
+   *
+   *   public ngOnInit(): void {
+   *     const id = this.route.snapshot.paramMap.get('id');
+   *   }
+   */
 }

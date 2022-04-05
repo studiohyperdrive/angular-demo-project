@@ -1,29 +1,24 @@
 import { Injectable } from '@angular/core';
-import { createSelector, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 import { IRepositoriesState } from '../../../../modules/repositories/store/store.types';
-import { ROCKET_SELECTOR } from '../../../../modules/repositories/store/rocket/rocket.selector';
-import { IRocketState } from '../../../../modules/repositories/store/rocket/rocket.types';
-import { getRocket } from '../../../../modules/repositories/store/rocket/rocket.actions';
-import { IRocket } from '../../../../modules/repositories/services/rocket/rocket.types';
 
 @Injectable()
 export class RocketFacade {
-  private _selectOne = createSelector(
-    ROCKET_SELECTOR,
-    (state: IRocketState) => state.rocket
-  )
+  // TODO: add a private method that uses ROCKET_SELECTOR and unwraps the state to only return 'rocket'
+  // private _selectOne = createSelector()
 
   constructor(
     private store: Store<IRepositoriesState>
   ) {}
 
-  public getRocket(id: number): void {
-    this.store.dispatch(getRocket({ id }));
+  public getRocket(id: number) {
+    // TODO: dispatch the correct action to trigger a fetch and store a rocket
+    // TODO: don't forget to add a return type to our method
   }
 
-  public selectRocket(): Observable<IRocket> {
-    return this.store.select(this._selectOne);
+  public selectRocket() {
+    // TODO: select the rocket from the store
+    // TODO: don't forget to add a return type to our method
   }
 }

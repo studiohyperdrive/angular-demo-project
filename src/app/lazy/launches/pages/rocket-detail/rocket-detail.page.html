@@ -1,9 +1,13 @@
-<ng-container *ngIf="rocket$ | async as rocket">
+<!-- TODO: This container should only be shown if there is a rocket -->
+<!-- BONUS: Can you avoid having to use the async pipe more than once? -->
+<ng-container>
   <section class="section">
-    <h1 class="title">{{ rocket.name }}</h1>
-    <p>{{ rocket.description }}</p>
-    <p *ngIf="rocket.wiki_url">
-      <a [href]="rocket.wiki_url" target="_blank">{{ rocket.name }} on Wikipedia</a>
+    <!-- TODO: replace the static information with information about the rocket -->
+    <h1 class="title">"name of the rocket"</h1>
+    <p>"description of the rocket"</p>
+    <!-- TODO: avoid this link from breaking if wiki_url is not provided -->
+    <p>
+      "Provide an external link to the wiki_url of the rocket"
     </p>
   </section>
 </ng-container>
