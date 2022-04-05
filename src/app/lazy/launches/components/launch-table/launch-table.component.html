@@ -14,7 +14,9 @@
     <td>{{ launch.status?.name }}</td>
     <td>{{ launch.window_start | date:'long' }}</td>
     <td>{{ launch.window_end | date:'long' }}</td>
-    <td>{{ launch.rocket?.configuration?.full_name }}</td>
+    <td>
+      <a [routerLink]="['rocket', launch.rocket?.configuration.id]">{{ launch.rocket?.configuration?.full_name }}</a>
+    </td>
   </tr>
   </tbody>
 </table>

@@ -30,7 +30,7 @@ describe('LaunchOverviewPage', () => {
     fixture.detectChanges();
   });
 
-  describe('Construct', () => {
+  describe('OnInit', () => {
     it('should fetch the first batch of launches', () => {
       expect(facade.getLaunches).toHaveBeenCalled();
     });
