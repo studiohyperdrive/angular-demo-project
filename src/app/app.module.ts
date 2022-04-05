@@ -7,7 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { CoreModule } from './core/core.module';
+import { CoreModule } from './modules/core/core.module';
 
 @NgModule({
   declarations: [

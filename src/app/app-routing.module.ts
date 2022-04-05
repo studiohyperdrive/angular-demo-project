@@ -7,7 +7,7 @@ const routes: Routes = [{
   pathMatch: 'full'
 }, {
   path: 'launches',
-  loadChildren: () => import('./launches/launches.module').then(m => m.LaunchesModule),
+  loadChildren: () => import('./lazy/launches/launches.module').then(m => m.LaunchesModule),
 }];
 
 @NgModule({

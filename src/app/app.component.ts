@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IMenuItem } from './core/components/menu/menu.types';
+import { IMenuItem } from './modules/core/components/menu/menu.types';
 
 @Component({
   selector: 'app-root',

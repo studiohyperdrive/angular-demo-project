@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { createSelector, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { IRepositoriesState } from '../../../repositories/store/store.types';
-import { getLaunches } from '../../../repositories/store/launch/launch.actions';
-import { ILaunch } from '../../../repositories/services/launch/launch.types';
-import { LAUNCH_SELECTOR, selectAllLaunches } from '../../../repositories/store/launch/launch.selector';
+import { IRepositoriesState } from '../../../../modules/repositories/store/store.types';
+import { getLaunches } from '../../../../modules/repositories/store/launch/launch.actions';
+import { ILaunch } from '../../../../modules/repositories/services/launch/launch.types';
+import { LAUNCH_SELECTOR, selectAllLaunches } from '../../../../modules/repositories/store/launch/launch.selector';
 import { filter } from 'rxjs/operators';
 
 @Injectable()

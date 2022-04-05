@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { LaunchFacade } from '../../facades/launch/launch.facade';
-import { ILaunch } from '../../../repositories/services/launch/launch.types';
+import { ILaunch } from '../../../../modules/repositories/services/launch/launch.types';
 import { Observable } from 'rxjs';
 
 @Component({

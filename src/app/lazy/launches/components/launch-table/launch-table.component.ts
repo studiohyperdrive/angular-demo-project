@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import { ILaunch } from '../../../repositories/services/launch/launch.types';
+import { ILaunch } from '../../../../modules/repositories/services/launch/launch.types';
 
 @Component({
   templateUrl: './launch-table.component.html',

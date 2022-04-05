@@ -2,13 +2,13 @@ import { getTestBed, TestBed } from '@angular/core/testing';
 import { first } from 'rxjs/operators';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
-import { LaunchStateMock } from '../../../repositories/store/launch/launch.store.mock';
-import { IRepositoriesState } from '../../../repositories/store/store.types';
-import { LaunchesMock } from '../../../repositories/services/launch/launch.service.mock';
+import { LaunchStateMock } from '../../../../modules/repositories/store/launch/launch.store.mock';
+import { IRepositoriesState } from '../../../../modules/repositories/store/store.types';
+import { LaunchesMock } from '../../../../modules/repositories/services/launch/launch.service.mock';
 
 import { LaunchFacade } from './launch.facade';
-import { ILaunch } from '../../../repositories/services/launch/launch.types';
-import { getLaunches } from '../../../repositories/store/launch/launch.actions';
+import { ILaunch } from '../../../../modules/repositories/services/launch/launch.types';
+import { getLaunches } from '../../../../modules/repositories/store/launch/launch.actions';
 
 const storeContent = {
   'launch': LaunchStateMock,

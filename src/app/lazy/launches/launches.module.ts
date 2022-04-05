@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { RepositoriesModule } from '../repositories/repositories.module';
-import { SharedModule } from '../shared/shared.module';
+import { RepositoriesModule } from '../../modules/repositories/repositories.module';
+import { SharedModule } from '../../modules/shared/shared.module';
 
 import { LaunchesRoutingModule } from './launches-routing.module';
 import { Facades } from './facades';

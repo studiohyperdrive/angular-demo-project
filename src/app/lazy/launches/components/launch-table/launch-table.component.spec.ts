@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
 
 import { LaunchTableComponent } from './launch-table.component';
-import { LaunchesMock } from '../../../repositories/services/launch/launch.service.mock';
+import { LaunchesMock } from '../../../../modules/repositories/services/launch/launch.service.mock';
 import { ChangeDetectionStrategy } from '@angular/core';
 
 describe('LaunchTableComponent', () => {
