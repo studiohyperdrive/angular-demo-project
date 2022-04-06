@@ -48,6 +48,13 @@ Other available commands are:
 | none         | TBD                                                                                                  |
 <br>
 
+## OAuth
+This project uses Auth0 for an example oauth implementation.
+Login using the developer@studiohyperdrive.be account and move to the "Angular Demo" application.
+
+We use the following library to connect:
+https://www.npmjs.com/package/angular-oauth2-oidc
+
 ## Deploy
 
 This project is a demo to use in workshops or as a local playground.

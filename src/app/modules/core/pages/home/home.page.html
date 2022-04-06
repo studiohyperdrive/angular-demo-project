@@ -1,0 +1,13 @@
+<section class="section">
+  <h1 class="title">Welcome!</h1>
+
+  <p class="block">Welcome to this demo-application.</p>
+  <p class="block buttons">
+    <button (click)="login()" class="button is-dark" [disabled]="isLoggedIn">Login</button>
+    <button (click)="logout()" class="button is-light" [disabled]="!isLoggedIn">Logout</button>
+  </p>
+  <ul class="block">
+    <li><strong>Username:</strong> developer@studiohyperdrive.be</li>
+    <li><strong>Password:</strong> developer-test-1</li>
+  </ul>
+</section>

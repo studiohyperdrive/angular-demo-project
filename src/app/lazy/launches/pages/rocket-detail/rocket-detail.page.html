@@ -1,8 +1,8 @@
 <ng-container *ngIf="rocket$ | async as rocket">
   <section class="section">
     <h1 class="title">{{ rocket.name }}</h1>
-    <p>{{ rocket.description }}</p>
-    <p *ngIf="rocket.wiki_url">
+    <p class="block">{{ rocket.description }}</p>
+    <p class="block" *ngIf="rocket.wiki_url">
       <a [href]="rocket.wiki_url" target="_blank">{{ rocket.name }} on Wikipedia</a>
     </p>
   </section>
