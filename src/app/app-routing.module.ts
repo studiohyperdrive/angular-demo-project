@@ -12,6 +12,10 @@ const routes: Routes = [{
   canActivate: [LoggedInGuard],
   loadChildren: () => import('./lazy/launches/launches.module').then(m => m.LaunchesModule),
 }, {
+  path: 'auth/callback',
+  redirectTo: '',
+  pathMatch: 'full',
+}, {
   path: '**',
   redirectTo: '',
   pathMatch: 'full',

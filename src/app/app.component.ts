@@ -22,6 +22,9 @@ export class AppComponent implements OnInit{
   ) {}
 
   public ngOnInit(): void {
+    console.log({
+      AuthConfig,
+    })
     this.oAuthService.configure(AuthConfig);
     this.oAuthService.setStorage(sessionStorage);
 
