@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:pages": "ng build --output-path=docs --base-href ./",
+    "build:pages": "ng build --output-path=docs --base-href /angular-demo-project/ ",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
