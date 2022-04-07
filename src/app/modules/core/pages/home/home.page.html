@@ -3,8 +3,8 @@
 
   <p class="block">Welcome to this demo-application.</p>
   <p class="block buttons">
-    <button (click)="login()" class="button is-dark" [disabled]="isLoggedIn">Login</button>
-    <button (click)="logout()" class="button is-light" [disabled]="!isLoggedIn">Logout</button>
+    <button (click)="authService.login()" class="button is-dark" [disabled]="authService.isAuthenticated">Login</button>
+    <button (click)="authService.logout()" class="button is-light" [disabled]="!authService.isAuthenticated">Logout</button>
   </p>
   <ul class="block">
     <li><strong>Username:</strong> developer@studiohyperdrive.be</li>

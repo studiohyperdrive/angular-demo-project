@@ -54,8 +54,9 @@ Other available commands are:
 This project uses Auth0 for an example oauth implementation.
 Login using the developer@studiohyperdrive.be account and move to the "Angular Demo" application.
 
-We use the following library to connect:
-https://www.npmjs.com/package/angular-oauth2-oidc
+We use the following library to connect:  
+- https://www.npmjs.com/package/angular-auth-oidc-client  
+- https://nice-hill-002425310.azurestaticapps.net/docs/intro  
 
 ## Deploy
 

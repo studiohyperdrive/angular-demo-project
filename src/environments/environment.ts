@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   oauth: {
-    redirectUri: 'http://localhost:4200/auth/callback',
-    postLogoutRedirectUri: 'http://localhost:4200/auth/callback',
+    redirectUri: 'http://localhost:4200',
+    postLogoutRedirectUri: 'http://localhost:4200',
   },
 };
 

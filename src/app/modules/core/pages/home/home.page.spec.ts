@@ -1,24 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { OAuthService } from 'angular-oauth2-oidc';
 
-import { AuthConfig } from '../../../auth/auth.config';
+import { AuthService } from '../../../auth/services/auth/auth.service';
+import { AuthServiceMock } from '../../../auth/services/auth/auth.service.mock';
 
 import { HomePage } from './home.page';
-
-const OAuthServiceMock = {
-  clientId: AuthConfig.clientId,
-  postLogoutRedirectUri: AuthConfig.postLogoutRedirectUri,
-  initImplicitFlow: jasmine.createSpy(),
-  revokeTokenAndLogout: jasmine.createSpy(),
-  hasValidIdToken: jasmine.createSpy().and.returnValue(true),
-  hasValidAccessToken: jasmine.createSpy().and.returnValue(true),
-};
 
 describe('HomePage', () => {
   let fixture: ComponentFixture<HomePage>;
   let component: HomePage;
-  let oAuthService: OAuthService;
+  let authService: AuthService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -26,8 +17,8 @@ describe('HomePage', () => {
         RouterTestingModule,
       ],
       providers: [{
-        provide: OAuthService,
-        useValue: OAuthServiceMock,
+        provide: AuthService,
+        useValue: AuthServiceMock,
       }],
       declarations: [
         HomePage
@@ -36,35 +27,33 @@ describe('HomePage', () => {
 
     fixture = TestBed.createComponent(HomePage);
     component = fixture.componentInstance;
-    oAuthService = TestBed.inject(OAuthService);
+    authService = TestBed.inject(AuthService);
 
     fixture.detectChanges();
   });
 
   describe('login', () => {
-    it('should trigger a login through the oAuthService', () => {
-      component.login();
+    it('should trigger a login through the authService', () => {
+      const loginButton = fixture.debugElement.nativeElement.querySelector('button.button.is-dark');
+      loginButton.disabled = false;
+      loginButton.click();
 
-      expect(oAuthService.initImplicitFlow).toHaveBeenCalled();
+      fixture.detectChanges();
+
+      expect(authService.login).toHaveBeenCalled();
     });
   });
 
   describe('logout', () => {
-    it('should trigger a logout through the oAuthService', () => {
-      component.logout();
+    it('should trigger a logout through the authService', () => {
+      authService.isAuthenticated = true;
 
-      expect(oAuthService.revokeTokenAndLogout).toHaveBeenCalledWith({
-        client_id: AuthConfig.clientId,
-        returnTo: AuthConfig.postLogoutRedirectUri,
-      }, true);
-    });
-  });
+      const logoutButton = fixture.debugElement.nativeElement.querySelector('button.button.is-light');
+      logoutButton.click();
 
-  describe('isLoggedIn', () => {
-    it('should return a boolean, indicating if the user is logged in', () => {
-      const isLoggedIn = component.isLoggedIn;
+      fixture.detectChanges();
 
-      expect(isLoggedIn).toBeTrue();
+      expect(authService.logout).toHaveBeenCalled();
     });
   });
 });

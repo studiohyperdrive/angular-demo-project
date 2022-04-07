@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
-import { OAuthModule } from 'angular-oauth2-oidc';
+import { AuthModule as OAuthModule } from 'angular-auth-oidc-client';
 
+import { AuthConfig } from './auth.config';
 import { Guards } from './guards';
+import { Services } from './services';
 
 @NgModule({
   imports: [
-    OAuthModule,
+    OAuthModule.forRoot({
+      config: AuthConfig,
+    }),
   ],
   providers: [
     Guards,
+    Services,
   ],
   exports: [
     OAuthModule,

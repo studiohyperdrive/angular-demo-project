@@ -1,11 +1,20 @@
-import { AuthConfig as IAuthConfig } from 'angular-oauth2-oidc';
+import { LogLevel, OpenIdConfiguration } from 'angular-auth-oidc-client';
+
 import { environment } from '../../../environments/environment';
 
-export const AuthConfig: IAuthConfig = {
-  redirectUri: environment.oauth.redirectUri,
-  issuer: 'https://shd-playground.eu.auth0.com/',
-  clientId: 'zc4Zkt5eAZA6LBYDMjjyiU32ZqRAdDTH',
-  scope: 'openid profile email',
-  logoutUrl: 'https://shd-playground.eu.auth0.com/v2/logout',
+// Example: https://github.com/damienbod/angular-auth-oidc-client/blob/main/projects/sample-code-flow-auth0/src/app/auth-config.module.ts
+
+export const AuthConfig: OpenIdConfiguration = {
+  authority: 'https://shd-playground.eu.auth0.com',
+  redirectUrl: environment.oauth.redirectUri,
   postLogoutRedirectUri: environment.oauth.postLogoutRedirectUri,
+  clientId: 'zc4Zkt5eAZA6LBYDMjjyiU32ZqRAdDTH',
+  scope: 'openid profile',
+  responseType: 'code',
+  silentRenew: true,
+  useRefreshToken: true,
+  logLevel: LogLevel.Debug,
+  customParamsRefreshTokenRequest: {
+    scope: 'openid profile',
+  },
 };

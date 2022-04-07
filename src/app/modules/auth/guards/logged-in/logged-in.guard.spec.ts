@@ -1,23 +1,20 @@
 import { getTestBed, TestBed } from '@angular/core/testing';
-import { OAuthService } from 'angular-oauth2-oidc';
+
+import { AuthService } from '../../services/auth/auth.service';
 
 import { LoggedInGuard } from './logged-in.guard';
-
-const OAuthServiceMock = {
-  hasValidIdToken: jasmine.createSpy(),
-  hasValidAccessToken: jasmine.createSpy(),
-};
+import { AuthServiceMock } from '../../services/auth/auth.service.mock';
 
 describe('LoggedInGuard', () => {
   let injector: TestBed;
   let guard: LoggedInGuard;
-  let oAuthService: OAuthService;
+  let authService: AuthService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [{
-        provide: OAuthService,
-        useValue: OAuthServiceMock,
+        provide: AuthService,
+        useValue: AuthServiceMock,
       },
         LoggedInGuard,
       ],
@@ -25,21 +22,20 @@ describe('LoggedInGuard', () => {
 
     injector = getTestBed();
     guard = injector.inject(LoggedInGuard);
-    oAuthService = injector.inject(OAuthService);
+    authService = injector.inject(AuthService);
   });
 
   describe('canActivate', () => {
     it('should return true when logged in', () => {
-      oAuthService.hasValidIdToken = jasmine.createSpy().and.returnValue(true);
-      oAuthService.hasValidAccessToken = jasmine.createSpy().and.returnValue(true);
+      authService.isAuthenticated = true;
+
       const result = guard.canActivate()
 
       expect(result).toBeTrue();
     });
 
     it('should return false when not logged in', () => {
-      oAuthService.hasValidIdToken = jasmine.createSpy().and.returnValue(false);
-      oAuthService.hasValidAccessToken = jasmine.createSpy().and.returnValue(false);
+      authService.isAuthenticated = false;
 
       const result = guard.canActivate()
 
