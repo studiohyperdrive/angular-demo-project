@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomePage } from './modules/core/pages/home/home.page';
-import { LoggedInGuard } from './modules/auth/guards/logged-in.guard';
+import { LoggedInGuard } from './modules/auth/guards/logged-in/logged-in.guard';
 
 const routes: Routes = [{
   path: '',

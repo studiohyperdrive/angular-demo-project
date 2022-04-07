@@ -7,7 +7,7 @@ import { RocketMock } from './rocket.service.mock';
 
 const myId = 1;
 
-describe('LaunchService', function () {
+describe('LaunchService', () => {
   let injector: TestBed;
   let service: RocketService;
   let httpMock: HttpTestingController;

@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { OAuthModule } from 'angular-oauth2-oidc';
-import { LoggedInGuard } from './guards/logged-in.guard';
+
+import { Guards } from './guards';
 
 @NgModule({
   imports: [
     OAuthModule,
   ],
   providers: [
-    LoggedInGuard,
+    Guards,
   ],
   exports: [
     OAuthModule,

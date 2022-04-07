@@ -1,4 +1,4 @@
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 
@@ -8,10 +8,7 @@ export class LoggedInGuard implements CanActivate {
     private oAuthService: OAuthService
   ) {}
 
-  public canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
-
+  public canActivate(): boolean {
     const hasIdToken = this.oAuthService.hasValidIdToken();
     const hasAccessToken = this.oAuthService.hasValidAccessToken();
 

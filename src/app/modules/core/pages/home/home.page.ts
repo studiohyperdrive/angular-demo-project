@@ -5,6 +5,13 @@ import { OAuthService } from 'angular-oauth2-oidc';
   templateUrl: './home.page.html',
 })
 export class HomePage {
+  public get isLoggedIn(): boolean {
+    const hasIdToken = this.oAuthService.hasValidIdToken();
+    const hasAccessToken = this.oAuthService.hasValidAccessToken();
+
+    return (hasIdToken && hasAccessToken);
+  }
+
   constructor(
     private readonly oAuthService: OAuthService
   ) {}
@@ -18,9 +25,5 @@ export class HomePage {
       client_id: this.oAuthService.clientId,
       returnTo: this.oAuthService.postLogoutRedirectUri,
     }, true)
-  }
-
-  public get isLoggedIn(): boolean {
-    return this.oAuthService.hasValidAccessToken();
   }
 }
